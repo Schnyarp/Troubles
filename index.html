@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Troubles.com — Premium Domain For Sale</title>
+  <meta name="description" content="Troubles.com — premium domain for troubleshooting platforms, help desks, diagnostics, incident management and remediation services. Inquire to purchase." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://troubles.com/" />
+  <meta name="theme-color" content="#071618" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Troubles.com — Premium Domain For Sale" />
+  <meta property="og:description" content="Troubles.com — brandable domain for help desks, diagnostics, incident management, remediation tools and support marketplaces. Contact domain@troubles.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://troubles.com/" />
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    :root{
+      --max-w:1100px;
+      --bg-1:#071618;     /* deep slate */
+      --bg-2:#0f2f31;
+      --panel-glass: rgba(255,255,255,0.02);
+      --card:#0f2323;
+      --muted:#92a8a7;
+      --accent:#ffd166;   /* warm highlight */
+      --teal:#14a392;
+      --radius:16px;
+      --shadow: 0 36px 110px rgba(2,8,18,0.65);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:44px 20px;
+      background:
+        radial-gradient(800px 320px at 12% 10%, rgba(20,163,146,0.04), transparent 12%),
+        linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 70%);
+      color:var(--card);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      overflow-x:hidden;
+    }
+
+    /* Diagnostic Console look */
+    .bg { position:fixed; inset:0; z-index:0; pointer-events:none; }
+
+    .console-band{
+      position:fixed;
+      left:50%;
+      top:8%;
+      transform:translateX(-50%);
+      width:1100px;
+      height:300px;
+      border-radius:18px;
+      z-index:0;
+      pointer-events:none;
+      background:
+        radial-gradient(600px 220px at 22% 20%, rgba(20,163,146,0.05), transparent 12%),
+        linear-gradient(180deg, rgba(255,209,102,0.02), rgba(255,255,255,0.005));
+      box-shadow: inset 0 18px 48px rgba(0,0,0,0.35);
+      mix-blend-mode:screen;
+      opacity:0.95;
+    }
+
+    .grid-watermark{
+      position:fixed;
+      right:6%;
+      top:10%;
+      width:300px;
+      height:220px;
+      z-index:0;
+      pointer-events:none;
+      opacity:0.06;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 220'><g stroke='%23ffffff' stroke-opacity='0.04' fill='none'><path d='M10 40h280M10 80h280M10 120h280'/></g></svg>");
+      background-repeat:no-repeat;
+      background-size:contain;
+    }
+
+    .floaters { position:fixed; inset:0; z-index:0; pointer-events:none; }
+
+    .icon {
+      position:absolute;
+      width:84px;
+      height:84px;
+      background-size:contain;
+      background-repeat:no-repeat;
+      opacity:0.12;
+      will-change:transform,opacity;
+      filter: drop-shadow(0 18px 36px rgba(0,0,0,0.6));
+    }
+
+    @keyframes floaty {
+      0%{ transform: translateY(0) rotate(-6deg); }
+      50%{ transform: translateY(-16px) rotate(6deg); }
+      100%{ transform: translateY(0) rotate(-6deg); }
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-w);
+      border-radius:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,0.03);
+      position:relative;
+      z-index:2;
+      color:var(--card);
+      overflow:hidden;
+    }
+
+    /* Big banner title at top */
+    .banner{
+      padding:42px 32px;
+      text-align:center;
+      background:linear-gradient(90deg, rgba(20,163,146,0.06), rgba(255,209,102,0.03));
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+    .banner h1{
+      margin:0;
+      font-size:44px;
+      font-weight:900;
+      letter-spacing:-0.6px;
+      color: #ffffff;
+      text-transform:none;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .banner p{ margin:0; color:rgba(255,255,255,0.9); font-size:15px; }
+
+    .inner{
+      padding:32px;
+    }
+
+    header{ display:flex; gap:18px; align-items:center; justify-content:space-between; margin-bottom:6px; }
+    .brand{ display:flex; gap:14px; align-items:center; }
+    .logo{
+      width:84px;height:84px;border-radius:12px;
+      background: linear-gradient(135deg,var(--teal), #2dd4e0);
+      color:#042826; display:flex; align-items:center; justify-content:center;
+      font-weight:900; font-size:18px; flex-shrink:0;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.45);
+    }
+
+    h2{ margin:0; font-size:20px; color:var(--accent); }
+    p.lead{ margin:6px 0 0; color:var(--muted); font-size:14px; max-width:760px; }
+
+    .grid{ display:grid; grid-template-columns: 1fr 380px; gap:26px; align-items:start; margin-top:18px; }
+
+    .hero{
+      padding:22px; border-radius:12px; color:var(--card);
+      background: linear-gradient(90deg, rgba(20,163,146,0.02), rgba(255,209,102,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      display:flex; gap:18px; align-items:center; justify-content:space-between;
+    }
+    .hero p{ margin:0; color:var(--muted); }
+
+    .panel{
+      background: var(--panel-glass);
+      color:var(--card);
+      padding:20px;
+      border-radius:12px;
+      box-shadow: 0 14px 44px rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .samples{ display:flex; gap:12px; margin-top:12px; flex-wrap:wrap; }
+    .sample{
+      min-width:140px; padding:12px; border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03); color:var(--muted); font-weight:700; text-align:center;
+    }
+
+    .cta-row{ display:flex; gap:12px; margin-top:16px; flex-wrap:wrap; align-items:center; }
+    .btn{ display:inline-flex; gap:10px; align-items:center; padding:10px 16px; border-radius:999px; font-weight:800; cursor:pointer; text-decoration:none; border:0; color:#042826; }
+    .btn-primary{ background:linear-gradient(90deg,var(--accent), #ffd882); color:#042826; box-shadow: 0 14px 44px rgba(0,0,0,0.5); }
+    .btn-ghost{ background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted); }
+
+    .contact-card{
+      position:sticky; top:28px; align-self:start;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.03);
+      box-shadow:0 14px 36px rgba(0,0,0,0.45); color:var(--card); max-width:380px;
+    }
+
+    label{ display:block; font-size:13px; color:var(--muted); margin-bottom:6px; }
+    input, textarea {
+      width:100%; padding:10px 12px; border-radius:8px;
+      border:1px solid rgba(255,255,255,0.06); margin-bottom:12px; font-size:14px;
+      color:#042826; background:#fff;
+    }
+    textarea{ min-height:110px; resize:vertical; }
+
+    footer{ margin-top:18px; color:var(--muted); font-size:13px; text-align:center }
+
+    @media (max-width:980px){
+      .grid{ grid-template-columns: 1fr; gap:18px; }
+      .container{ padding:0; }
+      .console-band, .grid-watermark, .floaters { display:none; }
+      .banner h1{ font-size:32px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="console-band" aria-hidden="true"></div>
+    <div class="grid-watermark" aria-hidden="true"></div>
+    <div class="floaters" id="floaters" aria-hidden="true"></div>
+  </div>
+
+  <main class="container" role="main" aria-labelledby="banner-heading">
+    <!-- Prominent banner title -->
+    <div class="banner" role="banner" aria-labelledby="banner-heading">
+      <h1 id="banner-heading">Troubles.com</h1>
+      <p>Premium domain for troubleshooting platforms, help desks and diagnostics.</p>
+    </div>
+
+    <div class="inner">
+      <header>
+        <div class="brand">
+          <div class="logo" aria-hidden="true">TR</div>
+          <div>
+            <h2 class="sr-only" style="position:absolute;left:-9999px">Troubles.com</h2>
+            <p class="lead">A straightforward name for problem-resolution products.</p>
+          </div>
+        </div>
+
+        <div style="text-align:right">
+          <div style="color:var(--muted);font-size:13px">For inquiries</div>
+          <div style="font-weight:800;color:var(--accent)"><a href="mailto:domain@troubles.com" style="color:inherit; text-decoration:none">domain@troubles.com</a></div>
+        </div>
+      </header>
+
+      <section class="grid" aria-label="Main content">
+        <div>
+          <div class="hero" role="note" aria-live="polite" aria-labelledby="hero-title">
+            <div>
+              <h2 id="hero-title">A clear name for fixing problems</h2>
+              <p>Troubles.com communicates immediate fit for products that diagnose, triage and resolve issues — ideal for support platforms, incident orchestration, diagnostics tools and remediation marketplaces.</p>
+
+              <div class="cta-row">
+                <a class="btn btn-primary" href="#" id="inquireBtn">Make an Offer</a>
+                <a class="btn btn-ghost" href="mailto:domain@troubles.com?subject=Domain%20Offer%20-%20Troubles.com">Email Now</a>
+              </div>
+            </div>
+
+            <div style="min-width:220px; text-align:center">
+              <div style="color:var(--muted); font-size:13px">Domain</div>
+              <div style="font-weight:900; font-size:18px; margin-top:6px; color:var(--teal)">Troubles.com</div>
+              <div style="color:var(--muted); font-size:13px; margin-top:8px">Serious offers only.</div>
+            </div>
+          </div>
+
+          <article class="panel" aria-labelledby="why-title" style="margin-top:18px">
+            <h2 id="why-title" class="section">Why Troubles.com?</h2>
+            <p style="color:var(--muted)">Clear, actionable and category-focused — this .com is suited to tools and services that center on problem resolution and operational reliability.</p>
+
+            <div style="margin-top:12px; color:var(--muted)">
+              <ul>
+                <li>Instant problem-solution signal — customers understand purpose immediately</li>
+                <li>Fits incident management, help desks, diagnostics, monitoring and remediation marketplaces</li>
+                <li>Brandable across web, mobile, docs and partner channels</li>
+              </ul>
+            </div>
+
+            <div class="samples" aria-hidden="false">
+              <div class="sample">Incident Management & Orchestration</div>
+              <div class="sample">Help Desk & Knowledge Base</div>
+              <div class="sample">Diagnostics & Monitoring Tools</div>
+              <div class="sample">Remediation & Support Marketplace</div>
+            </div>
+          </article>
+
+          <article class="panel" style="margin-top:18px" aria-labelledby="about-title">
+            <h3 id="about-title" style="margin-top:0">About this domain</h3>
+            <p style="color:var(--muted)">Troubles.com is a premium .com available for transfer.</p>
+
+            <ul style="color:var(--muted);margin-top:12px">
+              <li>Well-suited to founders, product teams, SRE/ops teams and enterprise tool builders</li>
+              <li>Useful for integrations with monitoring, ticketing, CRM, payments and partner distribution</li>
+              <li>Escrow recommended — we use escrow to ensure a smooth, secure transfer for buyer and seller.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="contact-card" aria-label="Contact & offer">
+          <div>
+            <h3 style="margin-top:0">Contact & Offer</h3>
+            <p style="margin-top:6px;color:var(--muted)">Submit an offer by emailing <a href="mailto:domain@troubles.com" style="color:var(--accent); font-weight:800">domain@troubles.com</a> or click "Make an Offer" to open your mail client with a prefilled message.</p>
+
+            <div style="margin-top:12px; font-size:13px; color:var(--muted)">
+              <strong>Escrow:</strong> We recommend escrow to ensure a secure transfer.
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <footer>
+        &copy; 2025 Troubles.com. All rights reserved.
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    // decorative floaters: wrench, shield, lifebuoy, beacon (data-URI SVGs)
+    (function placeFloaters(){
+      const layer = document.getElementById('floaters');
+      if(!layer) return;
+      const svgs = {
+        wrench: encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M8 44l18-18 6 6-18 18z' fill='%23FFF6E6' stroke='%23000000' stroke-opacity='0.03'/></svg>`),
+        shield: encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 64'><path d='M24 6l16 8v18c0 12-10 20-16 22-6-2-16-10-16-22V14z' fill='%23FFF' stroke='%23000000' stroke-opacity='0.03'/></svg>`),
+        lifebuoy: encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='22' fill='%23E9FBFF' opacity='0.06'/></svg>`),
+        beacon: encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 6v12' stroke='%23000000' stroke-opacity='0.04' stroke-width='3' stroke-linecap='round'/></svg>`)
+      };
+
+      const items = [
+        {svg:svgs.wrench, left:'10%', top:'18%', size:96, dur:9200},
+        {svg:svgs.shield, left:'78%', top:'16%', size:76, dur:11000},
+        {svg:svgs.lifebuoy, left:'48%', top:'66%', size:72, dur:10000},
+        {svg:svgs.beacon, left:'84%', top:'54%', size:68, dur:12000}
+      ];
+
+      items.forEach(it=>{
+        const el = document.createElement('div');
+        el.className = 'icon';
+        el.style.left = it.left;
+        el.style.top = it.top;
+        el.style.width = it.size + 'px';
+        el.style.height = it.size + 'px';
+        el.style.backgroundImage = `url("data:image/svg+xml;utf8,${it.svg}")`;
+        el.style.animation = `floaty ${it.dur}ms ease-in-out ${Math.random()*1200}ms infinite`;
+        el.style.opacity = 0.06 + Math.random()*0.2;
+        layer.appendChild(el);
+      });
+    })();
+
+    // Make an Offer prefilled mailto
+    document.getElementById('inquireBtn').addEventListener('click', function(e){
+      e.preventDefault();
+      const subject = encodeURIComponent('Domain Offer - Troubles.com');
+      const body = encodeURIComponent(
+`Hi —
+
+I would like to make an offer for Troubles.com.
+
+Offer (USD):
+Company / Org:
+Country:
+Contact email / phone:
+
+Please reply with transfer instructions and next steps.
+
+Thanks.`);
+      window.location.href = `mailto:domain@troubles.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
